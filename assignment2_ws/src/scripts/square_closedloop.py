@@ -3,7 +3,6 @@ import rospy
 from geometry_msgs.msg  import Twist
 from turtlesim.msg import Pose
 from math import pow,atan2,sqrt
-import numpy as np
 
 # Define points for square
 xarr = [5,8,8,5,5]
@@ -13,7 +12,7 @@ class turtlebot():
 
     def __init__(self):
         #Creating our node,publisher and subscriber
-        rospy.init_node('turtlebot_controller', anonymous=True)
+        rospy.init_node('squarebot_CL', anonymous=True)
         self.velocity_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
         self.pose_subscriber = rospy.Subscriber('/turtle1/pose', Pose, self.callback)
         self.pose = Pose()
@@ -64,7 +63,7 @@ class turtlebot():
                 vel_msg.angular.y = 0
                 vel_msg.angular.z = 0 
                 current_distance = sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
-                print(current_distance)
+                # print(current_distance)
                 #Publishing our vel_msg
                 self.velocity_publisher.publish(vel_msg)
                 # self.rate.sleep()

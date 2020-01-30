@@ -5,7 +5,7 @@ PI = 3.1415926535897
 
 def square():
 	# Starts a new node
-	rospy.init_node('squarebot', anonymous=True)
+	rospy.init_node('squarebot_OL', anonymous=True)
 	position_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
 	vel_msg = Twist()
 

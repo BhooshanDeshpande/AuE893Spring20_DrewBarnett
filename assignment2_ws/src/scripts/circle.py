@@ -12,7 +12,7 @@ def move():
     #Receiveing the user's input
     print("Let's move your robot")
     speed = 1
-    distance = PI
+    distance = input("Select a circumference for your circle:")
     angleRate = 2*PI/distance
     
     vel_msg.linear.x = abs(speed)
