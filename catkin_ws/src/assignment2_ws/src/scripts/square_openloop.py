@@ -11,9 +11,9 @@ def square():
 
 	#Receiving the user's input
 	print("Moving robot in 2x2 square")
-	speed = 0.2							# units/sec
-	angleRate = 0.2						# rad/sec
-	side_length = 2						# define side length for square
+	speed = rospy.get_param('~speed')							# units/sec
+	angleRate = rospy.get_param('~angleRate')						# rad/sec
+	side_length = rospy.get_param('~side_length')						# define side length for square
 	#Since we are moving just in x-axis
 
 	#Converting from angles to radians
@@ -34,11 +34,8 @@ def square():
 		while (current_distance < side_length):
 			vel_msg.linear.x = speed
 			vel_msg.angular.z = 0
-			#Publish the velocity
 			position_publisher.publish(vel_msg)
-			#Takes actual time to velocity calculus
 			t1 = float(rospy.Time.now().to_sec())
-			#Calculates distancePoseStamped
 			current_distance = speed*(t1-t0)
 			# print(current_distance)
 

@@ -11,8 +11,8 @@ def move():
     
     #Receiveing the user's input
     print("Let's move your robot")
-    distance = PI
-    angleRate = 2*PI/distance
+    distance = rospy.get_param('~distance')
+    angleRate = 2*PI/rospy.get_param('~distance')
     speed = 0.95
     
     vel_msg.linear.x = abs(speed)

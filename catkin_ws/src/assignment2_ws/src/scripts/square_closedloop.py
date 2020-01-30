@@ -32,40 +32,37 @@ class turtlebot():
         goal_pose = Pose()
         goal_pose.x = xi
         goal_pose.y = yi
-        distance_tolerance = .1
+        distance_tolerance = rospy.get_param('~tolerance')
         vel_msg = Twist()
 
 
         while sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2)) >= distance_tolerance:
 
             relative_angle = atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x)-self.pose.theta
-            while (abs(relative_angle) >= .01):
+            while (abs(relative_angle) >= 0.01):
                 #angular velocity in the z-axis:
                 vel_msg.linear.x = 0
                 vel_msg.linear.y = 0
                 vel_msg.linear.z = 0
                 vel_msg.angular.x = 0
                 vel_msg.angular.y = 0
-                vel_msg.angular.z = 4 * (atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x) - self.pose.theta)
+                vel_msg.angular.z = rospy.get_param('~angvel_gain') * (atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x) - self.pose.theta)
                 relative_angle = atan2(goal_pose.y - self.pose.y, goal_pose.x - self.pose.x)-self.pose.theta
                 # print(relative_angle)
                 self.velocity_publisher.publish(vel_msg)
                 
             current_distance = sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
-            while (abs(current_distance) >= distance_tolerance):
-                #Porportional Controller
-                #linear velocity in the x-axis:
-                vel_msg.linear.x = 2 * sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
+            while (current_distance >= distance_tolerance):
+                vel_msg.linear.x = rospy.get_param('~linvel_gain') * sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
                 vel_msg.linear.y = 0
                 vel_msg.linear.z = 0
                 vel_msg.angular.x = 0
                 vel_msg.angular.y = 0
-                vel_msg.angular.z = 0 
+                vel_msg.angular.z = 0
                 current_distance = sqrt(pow((goal_pose.x - self.pose.x), 2) + pow((goal_pose.y - self.pose.y), 2))
+                self.velocity_publisher.publish(vel_msg)    
                 # print(current_distance)
-                #Publishing our vel_msg
-                self.velocity_publisher.publish(vel_msg)
-                # self.rate.sleep()
+                    
 
         #Stopping our robot after the movement is over
         vel_msg.linear.x = 0
