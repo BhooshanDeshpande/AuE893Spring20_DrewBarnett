@@ -21,4 +21,8 @@ Run individual files...
 'roslaunch assignment2_ws square_openloop.launch' --> runs square_openloop.py within turtlesim
 'roslaunch assignment2_ws square_closedloop.launch' --> runs square_closedloop.py within turtlesim
 
-
+--------------------- IF LAUNCH FILES DO NOT WORK ---------------------
+Run individual files...
+'rosrun assignment2_ws circle1.py' --> runs circle.py within turtlesim
+'rosrun assignment2_ws square_openloop1.py' --> runs square_openloop.py within turtlesim
+'rosrun assignment2_ws square_closedloop1.py' --> runs square_closedloop.py within turtlesim
