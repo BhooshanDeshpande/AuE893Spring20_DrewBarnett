@@ -1,0 +1,11 @@
+<launch>
+  <arg name="tolerance" default="0.1" />
+  <arg name="linvel_gain" default="2" />
+  <arg name="angvel_gain" default="4" />
+
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" />
+  <node pkg="assignment2_ws" type="square_closedloop.py" name="square_closedloop" />
+  <param name="tolerance" value="$(arg tolerance)" />
+  <param name="linvel_gain" value="$(arg linvel_gain)" />
+  <param name="angvel_gain" value="$(arg angvel_gain)" />
+</launch>
