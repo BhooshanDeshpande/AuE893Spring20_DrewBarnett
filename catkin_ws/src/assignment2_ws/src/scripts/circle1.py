@@ -15,11 +15,13 @@ def move():
     angleRate = 2*PI/distance
     speed = 0.95
     
+        # Give velocity command in the x direction only
     vel_msg.linear.x = abs(speed)
     vel_msg.linear.y = 0
     vel_msg.linear.z = 0
     vel_msg.angular.x = 0
     vel_msg.angular.y = 0
+    # use angleRate as a value in the angular z direction to turn the turtlebot
     vel_msg.angular.z = angleRate   
 
     while not rospy.is_shutdown():
@@ -31,10 +33,10 @@ def move():
         while(current_distance < distance):
             velocity_publisher.publish(vel_msg)
             t1=float(rospy.Time.now().to_sec())
-            #Calculates distancePoseStamped
+            # Calculate the current distance for while loop update
             current_distance= speed*(t1-t0)
         
-       #Force the robot to stop
+       #Force the robot to stop after while loop 
         vel_msg.linear.x = 0
         vel_msg.angular.z = 0
         velocity_publisher.publish(vel_msg)

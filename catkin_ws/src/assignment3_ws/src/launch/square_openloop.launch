@@ -1,0 +1,12 @@
+<launch>
+  <arg name="speed" default="0.2" />
+  <arg name="angleRate" default="0.2" />
+  <arg name="side_length" default="2" />
+
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" />
+  <node pkg="assignment2_ws" type="square_openloop.py" name="square_openloop" />
+  <param name="speed" value="$(arg speed)" />
+  <param name="angleRate" value="$(arg angleRate)" />
+  <param name="side_length" value="$(arg side_length)" />
+
+</launch>
