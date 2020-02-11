@@ -1,7 +1,0 @@
-<launch>
-  <arg name="distance" default="3.14159" />
-
-  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node" />
-  <node pkg="assignment2_ws" type="circle.py" name="circle" />
-  <param name="distance" value="$(arg distance)" />
-</launch>

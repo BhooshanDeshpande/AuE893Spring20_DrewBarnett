@@ -3,9 +3,7 @@
   <arg name="x_pos" default="0.0"/>
   <arg name="y_pos" default="0.0"/>
   <arg name="z_pos" default="0.0"/>
-  <arg name="speed" default="0.2" />
-  <arg name="angleRate" default="0.2" />
-  <arg name="side_length" default="2" />
+  <arg name="distance" default="6" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/empty.world"/>
@@ -19,9 +17,6 @@
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
-  <node pkg="assignment3_turtlebot3" type="square_openloop.py" name="square_openloop" />
-  <param name="speed" value="$(arg speed)" />
-  <param name="angleRate" value="$(arg angleRate)" />
-  <param name="side_length" value="$(arg side_length)" />
-  
+  <node pkg="assignment3_turtlebot3" type="circle.py" name="circle" />
+  <param name="distance" value="$(arg distance)" />
 </launch>

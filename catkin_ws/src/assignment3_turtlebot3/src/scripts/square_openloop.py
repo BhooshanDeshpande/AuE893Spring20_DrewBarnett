@@ -6,14 +6,15 @@ PI = 3.1415926535897
 def square():
 	# Starts a new node
 	rospy.init_node('squarebot_OL', anonymous=True)
-	position_publisher = rospy.Publisher('/turtle1/cmd_vel', Twist, queue_size=10)
+	position_publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	vel_msg = Twist()
 
 	#Receiving the user's input
 	print("Moving robot in 2x2 square")
-	speed = rospy.get_param('~speed')							# units/sec
-	angleRate = rospy.get_param('~angleRate')						# rad/sec
-	side_length = rospy.get_param('~side_length')						# define side length for square
+	print(rospy.get_param_names())
+	speed = rospy.get_param('speed')							# units/sec
+	angleRate = rospy.get_param('angleRate')						# rad/sec
+	side_length = rospy.get_param('side_length')						# define side length for square
 	#Since we are moving just in x-axis
 
 	#Converting from angles to radians
