@@ -11,11 +11,10 @@ def move():
     vel_msg = Twist()
     
     #Receiveing the user's input
-    # print("Let's move your robot")
-    print(rospy.get_param_names())
-    distance = rospy.get_param('distance')
-    angleRate = 2*PI/distance
-    speed = 0.95
+    print("Let's move your robot")
+    distance = 2
+    angleRate = 0.5
+    speed = 0.15
     
     # Give velocity command in the x direction only
     vel_msg.linear.x = abs(speed)
