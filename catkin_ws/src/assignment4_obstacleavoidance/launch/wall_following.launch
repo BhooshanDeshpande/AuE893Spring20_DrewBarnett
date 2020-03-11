@@ -1,0 +1,15 @@
+<launch>
+  <arg name ="file" default="wall_follower"/>
+  <arg name ="kp" default="0.4"/>
+  <arg name ="kd" default="0.3"/>
+  <arg name ="speed" default="0.2"/>
+
+  <include file="$(find assignment4_obstacleavoidance)/launch/turtlebot3_wallfollowing.launch">
+  </include>
+
+  <node pkg="assignment4_obstacleavoidance" type="$(arg file).py" name="obstacle_avoidance"/>
+  <param name="kp" value="$(arg kp)" />
+  <param name="kd" value="$(arg kd)" />
+  <param name="speed" value="$(arg speed)" />
+
+</launch>

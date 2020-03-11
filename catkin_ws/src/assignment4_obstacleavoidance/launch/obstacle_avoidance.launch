@@ -1,0 +1,12 @@
+<launch>
+<!-- default = "0.4" for TURTLEBOT / default ="0.6" for GAZEBO  -->
+	<arg name="distance_target"/>
+	<arg name="speed" default="0.4"/>
+
+  	<include file="$(find assignment4_obstacleavoidance)/launch/turtlebot3_obstaceavoidance.launch">
+  	</include>
+
+  	<node pkg="assignment4_obstacleavoidance" type="wander.py" name="obstacle_avoidance"/>
+  	<param name="distance_target" value="$(arg distance_target)" />
+  	<param name="speed" value="$(arg speed)" />
+</launch>
