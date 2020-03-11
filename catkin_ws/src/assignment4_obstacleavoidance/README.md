@@ -16,7 +16,7 @@ The contents of this package include the solutions to the following 3 tasks:
 2. Obstacle avoidance in Gazebo:
 	- Open the terminal
 	- Enter "roslaunch assignment4_obstacleavoidance obstacle_avoidance.launch distance_target:=[value]"
-	- (Note: distance_target should be at least 0.6 for Gazebo implementation)
+	- (Note: distance_target should be at least 0.8 for Gazebo implementation)
 
 3. Obstacle avoidance of the turtlebot
 	- Open the terminal 
@@ -35,7 +35,7 @@ This part utilizes "wall_follower.py" to compare the left and right side turtleb
 
 2. Obstacle avoidance in Gazebo:
 
-This part utilizes "wander.py" to compare the left, front, and right side turtlebot LiDAR data to navigate the world. A set of conditional statements are established which manipulate the behavior of the turtlebot based on whether or not an object is present. A value of 0.6 or greater should be chosen for the distance_target argument. This is because the Gazebo environment performs differently than the actual turtlebot implementation.
+This part utilizes "wander.py" to compare the left, front, and right side turtlebot LiDAR data to navigate the world. A set of conditional statements are established which manipulate the behavior of the turtlebot based on whether or not an object is present. A value of 0.8 or greater should be chosen for the distance_target argument. This is because the Gazebo environment performs differently than the actual turtlebot implementation.
 
 3. Obstacle avoidance of the turtlebot
 
