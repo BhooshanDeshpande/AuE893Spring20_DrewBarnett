@@ -1,6 +1,6 @@
 <launch>
-<!-- default = "0.4" for TURTLEBOT / default ="0.6" for GAZEBO  -->
-	<arg name="distance_target" default="0.6"/>
+<!-- default = "0.4" for TURTLEBOT / default ="0.8" for GAZEBO  -->
+	<arg name="distance_target" default="0.8"/>
 	<arg name="speed" default="0.4"/>
 
   	<include file="$(find assignment4_obstacleavoidance)/launch/turtlebot3_obstaceavoidance.launch">
