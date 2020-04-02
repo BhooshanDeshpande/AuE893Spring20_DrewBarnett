@@ -24,13 +24,6 @@ The contents of this package include the turtlebot implementations of the follow
 
 3. Apriltag following (turtlebot):
 
-	(On remote PC): Open a terminal, run "roscore"
-	(On remote PC): Open a new terminal for turtlebot commands, run "ssh pi@<raspberry_pi_ipv4>"
-
-	(On turtlebot): Bringup the turtlebot, "roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch"
-	(On turtlebot): Open new terminal, "roslaunch turtlebot3_bringup turtlebot3_robot.launch"
-	(On remote PC): run, "roslaunch assignment5_trackingandfollowing apriltag.launch"
-
 roscore
 roslaunch turtlebot3_bringup turtlebot3_robot.launch
 roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch
