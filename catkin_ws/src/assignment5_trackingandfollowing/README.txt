@@ -31,6 +31,13 @@ The contents of this package include the turtlebot implementations of the follow
 	(On turtlebot): Open new terminal, "roslaunch turtlebot3_bringup turtlebot3_robot.launch"
 	(On remote PC): run, "roslaunch assignment5_trackingandfollowing apriltag.launch"
 
+roscore
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch
+rosrun image_transport republish compressed in:=raspicam_node/image raw out:=raspicam_node/image
+ROS_NAMESPACE=raspicam_node rosrun image_proc image_proc image_raw:=image _approximate_s=true _queue_size:=20
+roslaunch apriltag_ros continuous_detection.launch
+
 #################################### DESCRIPTION OF EACH PART ###############################
 
 1. Line following:
@@ -43,7 +50,7 @@ This code utilizes an external apriltag_ros package, which provides code that en
 
 #################################### MEMBER CONTRIBUTIONS ###################################
 
-Bhooshan - Implementation of problem 2 code to robot, controller for april tag following, controller for line following.
+Bhooshan - Implementation of problem 2 code to robot, controller for april tag following, controller for line following, our savior.
 Abhishek - Implementation of followtag.py to turtlebot, controller for problem 1 line following, followtag.py.
 Rahul - Implementation of followtag.py to turtlebot, launch file for problem 1 (turtlebot implementation), followtag.py.
 Drew - README, launch file for problem 1 (gazebo), controller for april tag following, gazebo videos.
