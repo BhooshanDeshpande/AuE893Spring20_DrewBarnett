@@ -29,7 +29,7 @@ roslaunch turtlebot3_bringup turtlebot3_robot.launch
 roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch
 rosrun image_transport republish compressed in:=raspicam_node/image raw out:=raspicam_node/image
 ROS_NAMESPACE=raspicam_node rosrun image_proc image_proc image_raw:=image _approximate_s=true _queue_size:=20
-roslaunch apriltag_ros continuous_detection.launch
+roslaunch assignment5_trackingandfollowing apriltag.launch
 
 #################################### DESCRIPTION OF EACH PART ###############################
 
