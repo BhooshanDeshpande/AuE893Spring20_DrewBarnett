@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel -DCMAKE_INSTALL_PREFIX=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/install -G Unix Makefiles
