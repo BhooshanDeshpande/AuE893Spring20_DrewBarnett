@@ -68,7 +68,7 @@ def pose_callback(data):
 		tag = 'wall_following'
 	elif dist2obstacle < 0.2:
 		tag = 'obstacle_avoidance'
-	elif dist2line < 0.1:
+	elif dist2line < 0.15:
 		tag = 'line_following'
 	elif dist2stop < 0.26 and stop_check==True:
 		tag = 'stop'
@@ -190,6 +190,7 @@ def callback_leg(data):
 		# x_prev = x_leg; y_prev = y_leg; z_prev=z_leg
 		if tag == 'human_following': 	
 			cv2.destroyAllWindows()
+			rospy.loginfo_throttle(3,'FOLLOWING MY HUMAN')
 			twist_object = Twist()
 			dist_threshold = 0.4
 			angle_threshold = 0.01
@@ -252,6 +253,7 @@ def listen_odom():
 if __name__ == '__main__':
 	try:
 		rospy.loginfo("------INITIATING AUTONOMOUS CONTROLLER-------")
+		time.sleep(30)
 		rospy.init_node("Autonomous_Controller",anonymous=True)
 		listen_odom()
 	except rospy.ROSInterruptException: pass
