@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel
+
+Name: easy_markers
+Description: Description of easy_markers
+Version: 0.2.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs interactive_markers rospy tf visualization_msgs

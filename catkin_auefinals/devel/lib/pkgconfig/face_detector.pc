@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel
+
+Name: face_detector
+Description: Description of face_detector
+Version: 1.1.2
+Cflags: -I/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel/include -I/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/src/auefinals/People_Detection/people/face_detector/include
+Libs: -L${prefix}/lib 
+Requires: actionlib actionlib_msgs cv_bridge geometry_msgs image_geometry image_transport message_filters message_runtime people_msgs roscpp roslib rospy sensor_msgs std_msgs stereo_msgs tf

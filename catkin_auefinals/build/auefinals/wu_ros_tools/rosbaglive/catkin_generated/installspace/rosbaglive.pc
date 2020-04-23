@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/install
+
+Name: rosbaglive
+Description: Description of rosbaglive
+Version: 0.2.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

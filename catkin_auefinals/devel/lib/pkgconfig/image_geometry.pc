@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel
+
+Name: image_geometry
+Description: Description of image_geometry
+Version: 1.12.8
+Cflags: -I/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/src/auefinals/vision_opencv/image_geometry/include
+Libs: -L${prefix}/lib -limage_geometry
+Requires: sensor_msgs

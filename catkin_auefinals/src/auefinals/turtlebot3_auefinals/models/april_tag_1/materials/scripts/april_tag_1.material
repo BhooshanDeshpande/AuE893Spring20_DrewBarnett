@@ -1,0 +1,14 @@
+material april_tag_1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture tag1_resized.png
+      }
+    }
+  }
+}
+

@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel
+
+Name: people_velocity_tracker
+Description: Description of people_velocity_tracker
+Version: 1.1.2
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: easy_markers geometry_msgs kalman_filter people_msgs roslib rospy

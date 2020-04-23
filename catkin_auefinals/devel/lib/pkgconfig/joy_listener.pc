@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel
+
+Name: joy_listener
+Description: Description of joy_listener
+Version: 0.2.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: rospy sensor_msgs

@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel
+
+Name: detector_msg_to_pose_array
+Description: Description of detector_msg_to_pose_array
+Version: 1.8.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: genpy geometry_msgs roslib rospy rostopic

@@ -1,0 +1,8 @@
+prefix=/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/install
+
+Name: kalman_filter
+Description: Description of kalman_filter
+Version: 0.2.6
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

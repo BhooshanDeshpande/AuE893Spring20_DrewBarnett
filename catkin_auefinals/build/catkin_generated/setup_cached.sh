@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/drew/SCHOOL/AuE893Spring20_DrewBarnett/catkin_auefinals/src:$ROS_PACKAGE_PATH"
